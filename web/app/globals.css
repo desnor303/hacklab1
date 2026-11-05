@@ -1,0 +1,167 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 96px;
+}
+
+body {
+  @apply bg-ink-950 text-slate-200 antialiased;
+  background-image: radial-gradient(
+    70% 45% at 50% -10%,
+    rgba(159, 239, 0, 0.07),
+    transparent 70%
+  );
+  background-repeat: no-repeat;
+}
+
+::selection {
+  background: rgba(159, 239, 0, 0.28);
+  color: #ffffff;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #080c12;
+}
+::-webkit-scrollbar-thumb {
+  background: #1a2433;
+  border: 2px solid #080c12;
+  border-radius: 8px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #243246;
+}
+
+@layer components {
+  .container-page {
+    @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+
+  .card {
+    @apply rounded-2xl border border-white/[0.07] bg-ink-850/80 shadow-card;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg bg-acid px-4 py-2.5 text-sm font-semibold text-ink-950 transition hover:bg-acid-soft hover:shadow-glow focus:outline-none focus-visible:ring-2 focus-visible:ring-acid/60 disabled:cursor-not-allowed disabled:opacity-50;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg border border-white/10 bg-white/[0.03] px-4 py-2.5 text-sm font-semibold text-slate-200 transition hover:border-white/20 hover:bg-white/[0.06] focus:outline-none focus-visible:ring-2 focus-visible:ring-white/20 disabled:cursor-not-allowed disabled:opacity-50;
+  }
+
+  .btn-danger {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg border border-rose-500/30 bg-rose-500/10 px-4 py-2.5 text-sm font-semibold text-rose-300 transition hover:bg-rose-500/20 focus:outline-none focus-visible:ring-2 focus-visible:ring-rose-500/40 disabled:cursor-not-allowed disabled:opacity-50;
+  }
+
+  .input {
+    @apply w-full rounded-lg border border-white/10 bg-ink-900 px-3.5 py-2.5 text-sm text-slate-100 placeholder:text-slate-600 transition focus:border-acid/60 focus:outline-none focus:ring-2 focus:ring-acid/20;
+  }
+
+  .label {
+    @apply mb-1.5 block text-xs font-semibold uppercase tracking-wider text-slate-400;
+  }
+
+  .badge {
+    @apply inline-flex items-center gap-1 rounded-md border px-2 py-0.5 text-[11px] font-semibold uppercase tracking-wide;
+  }
+
+  .chip {
+    @apply inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/[0.03] px-3.5 py-1.5 text-xs font-medium text-slate-300 transition hover:border-acid/40 hover:text-acid;
+  }
+
+  .section-label {
+    @apply font-mono text-xs font-semibold uppercase tracking-[0.22em] text-acid;
+  }
+}
+
+.article-prose {
+  font-size: 1rem;
+}
+
+.article-prose h2 {
+  @apply mb-4 mt-12 scroll-mt-28 border-b border-white/[0.06] pb-3 text-2xl font-bold tracking-tight text-white;
+}
+
+.article-prose h3 {
+  @apply mb-3 mt-8 scroll-mt-28 text-xl font-semibold text-slate-100;
+}
+
+.article-prose p {
+  @apply leading-7 text-slate-300;
+}
+
+.article-prose a {
+  @apply font-medium text-acid underline decoration-acid/30 underline-offset-4 transition hover:decoration-acid;
+}
+
+.article-prose strong {
+  @apply font-semibold text-white;
+}
+
+.article-prose code:not(pre code) {
+  @apply rounded border border-white/10 bg-white/[0.06] px-1.5 py-0.5 font-mono text-[0.85em] font-normal text-acid-soft;
+}
+
+.article-prose code:not(pre code)::before,
+.article-prose code:not(pre code)::after {
+  content: "";
+}
+
+.article-prose blockquote {
+  @apply my-6 rounded-r-lg border-l-2 border-acid/60 bg-acid/[0.04] py-1 pl-5 pr-4 font-normal not-italic text-slate-300;
+}
+
+.article-prose blockquote p:first-of-type::before,
+.article-prose blockquote p:last-of-type::after {
+  content: "";
+}
+
+.article-prose ul > li::marker {
+  color: #9fef00;
+}
+
+.article-prose ol > li::marker {
+  color: #64748b;
+}
+
+.article-prose table {
+  @apply my-0 w-full text-sm;
+}
+
+.article-prose th {
+  @apply bg-white/[0.03] px-4 py-3 text-left text-xs font-semibold uppercase tracking-wider text-slate-300;
+}
+
+.article-prose td {
+  @apply border-t border-white/[0.06] px-4 py-3 text-slate-300;
+}
+
+.article-prose hr {
+  @apply my-10 border-white/[0.08];
+}
+
+.article-prose img {
+  @apply rounded-xl border border-white/10;
+}
+
+.article-prose pre {
+  background: transparent;
+}
+
+.article-prose pre code {
+  @apply bg-transparent p-0 text-[13.5px] leading-relaxed;
+}
+
+.hljs {
+  background: transparent !important;
+}

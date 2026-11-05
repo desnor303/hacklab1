@@ -1,0 +1,23 @@
+{
+  "name": "hacklab",
+  "version": "1.0.0",
+  "private": true,
+  "description": "HackLab - Nền tảng học bảo mật & lập trình với MENN stack",
+  "workspaces": [
+    "server",
+    "web"
+  ],
+  "scripts": {
+    "dev": "concurrently -n api,web -c green,cyan \"npm run dev -w server\" \"npm run dev -w web\"",
+    "dev:server": "npm run dev -w server",
+    "dev:web": "npm run dev -w web",
+    "seed": "npm run seed -w server",
+    "seed:fresh": "npm run seed -w server -- --fresh",
+    "build": "npm run build -w web",
+    "start": "concurrently -n api,web -c green,cyan \"npm run start -w server\" \"npm run start -w web\"",
+    "typecheck": "npm run typecheck -w web"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}
